@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 PARK_ID = 2
 API_URL = f"https://queue-times.com/parks/{PARK_ID}/queue_times.json"
@@ -28,6 +28,10 @@ def filter_thrill_rides(data):
 
 def generate_html(rides):
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    one_hour_later = now + timedelta(hours=1)
+
+    # Format as string
+    one_hour_later_str = one_hour_later.strftime("%Y-%m-%d %H:%M")
     rows = ""
     for ride in rides:
         rows += f"<tr><td>{ride['name']}</td><td>{ride['wait']} minutes</td></tr>\n"
@@ -51,7 +55,7 @@ def generate_html(rides):
     </head>
     <body>
         <table>
-            <caption>Live Thrill Ride Queue Times at Thorpe Park<br>As of {now}</caption>
+            <caption>Live Thrill Ride Queue Times at Thorpe Park<br>As of {one_hour_later_str}</caption>
             <thead><tr><th>Ride</th><th>Wait Time</th></tr></thead>
             <tbody>
                 {rows}
