@@ -27,10 +27,11 @@ def filter_thrill_rides(data):
     return sorted(thrill_rides, key=lambda r: r['wait'])
 
 def generate_html(rides):
-    now = datetime.now().strftime("%Y-%m-%d %H:%M")
-    one_hour_later = now + timedelta(hours=1)
+    now = datetime.now()
+    one_hour_later = now + timedelta(hours=1)  # add 1 hour
 
-    # Format as string
+    # Format both as strings if needed
+    now_str = now.strftime("%Y-%m-%d %H:%M")
     one_hour_later_str = one_hour_later.strftime("%Y-%m-%d %H:%M")
     rows = ""
     for ride in rides:
