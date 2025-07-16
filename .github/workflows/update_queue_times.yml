@@ -1,4 +1,4 @@
-name: Update Thorpe Park Queue Times
+name: Update Thorpe Park Queue Times updated
 
 on:
   schedule:
