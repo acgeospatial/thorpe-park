@@ -5,7 +5,6 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
-# 👇 permissions must be at the top level, not under jobs
 permissions:
   contents: write
 
@@ -35,6 +34,8 @@ jobs:
           head -n 20 index.html || echo "index.html not found"
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,5 +43,4 @@ jobs:
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update queue times [ci skip]"
           git pull --rebase
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GI_
+
