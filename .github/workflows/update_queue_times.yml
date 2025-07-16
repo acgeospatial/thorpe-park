@@ -27,7 +27,7 @@ jobs:
       - name: Run script to generate index.html
         run: python generate_queue_times.py
 
-      - name: Debug: Show generated index.html
+      - name: Debug Show generated index.html
         run: |
           echo "Current time: $(date)"
           ls -l index.html
