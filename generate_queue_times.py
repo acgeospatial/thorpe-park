@@ -37,6 +37,7 @@ def generate_html(rides):
     <html lang="en">
     <head>
         <title>Thorpe Park Thrill Ride Queue Times</title>
+        <!-- generated at {now} -->
         <style>
             body {{ font-family: Arial, sans-serif; padding: 2rem; background: #f8f8f8; }}
             table {{ border-collapse: collapse; width: 60%; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }}
