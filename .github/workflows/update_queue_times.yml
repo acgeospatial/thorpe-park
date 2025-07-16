@@ -5,6 +5,7 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
+# 👇 permissions must be at the top level, not under jobs
 permissions:
   contents: write
 
@@ -42,4 +43,4 @@ jobs:
           git pull --rebase
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GI_
