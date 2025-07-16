@@ -40,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update queue times [ci skip]"
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update queue times"
           git pull --rebase
           git push
 
