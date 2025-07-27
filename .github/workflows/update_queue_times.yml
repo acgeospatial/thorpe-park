@@ -2,7 +2,7 @@ name: Update Thorpe Park Queue Times updated to 2min
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
